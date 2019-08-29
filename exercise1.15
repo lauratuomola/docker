@@ -1,0 +1,5 @@
+link to Docker hub:
+https://cloud.docker.com/u/ltuomola/repository/docker/ltuomola/docker-hy
+
+how to run:
+docker run ltuomola/docker-hy
