@@ -1,0 +1,9 @@
+version: '3.5' 
+
+services: 
+    first_volume_exercise:  
+      image: ltuomola/docker-volume
+      build: .
+      volumes: 
+        - ./logs.txt:/usr/app/logs.txt
+      container_name: volume-exercise
