@@ -1,0 +1,9 @@
+version: '3.5' 
+
+services: 
+    ports_exercise:  
+      image: ltuomola/ports_exercise
+      ports: 
+        - 8080:80 
+      build: .
+      container_name: ports-exercise

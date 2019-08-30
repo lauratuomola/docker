@@ -1,0 +1,9 @@
+version: '3.5' 
+
+services: 
+    ports_exercise:  
+      image: ltuomola/ports_exercise
+      build: .
+      volumes: 
+        - ./logs.txt:/usr/app/logs.txt
+      container_name: ports-exercise
