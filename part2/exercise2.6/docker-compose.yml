@@ -1,0 +1,35 @@
+version: '3.5'
+
+services: 
+    redis:
+      image: redis
+    db:
+      image: postgres
+      restart: unless-stopped
+      ports:
+        - 5432:5432
+      environment:
+        - POSTGRES_PASSWORD=example
+        - POSTGRES_USERNAME=postgres
+        # - POSTGRES_DB=database
+      container_name: postgres-exercise2.6
+    frontend:
+      image: ltuomola/frontend-example-docker
+      ports: 
+        - 5000:5000
+      build: .
+      container_name: frontend-exercise2.6
+    backend:
+      image: ltuomola/backend-example-docker
+      ports:
+        - 8000:8000
+      build: .
+      environment:
+        - REDIS=redis
+        - DB_USERNAME=postgres
+        - DB_PASSWORD=example
+        - DB_NAME=postgres
+        - DB_HOST=db
+      container_name: backend-exercise2.6
+      depends_on:
+        - db
