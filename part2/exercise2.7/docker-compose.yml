@@ -1,0 +1,31 @@
+version: '3.5'
+
+services: 
+    training:
+      image: ltuomola/training-machine-learning
+      build: ./kurkkumopo-training
+      container_name: training-exercise2.7
+      volumes:
+        - models:/src/model
+        - images:/src/imgs
+        - data:/data
+    frontend:
+      image: ltuomola/frontend-machine-learning
+      ports: 
+        - 3000:3000
+      build: ./kurkkumopo-frontend
+      container_name: frontend-exercise2.7
+    backend:
+      image: ltuomola/backend-machine-learning
+      ports:
+        - 5000:5000
+      build: ./kurkkumopo-backend
+      container_name: backend-exercise2.7
+      volumes:
+        - models:/src/model
+      depends_on:
+        - training
+volumes:
+  models:
+  images:
+  data:
