@@ -1,0 +1,15 @@
+version: '3.5'
+
+services: 
+    frontend:
+      image: ltuomola/frontend-example-docker3-1
+      ports: 
+        - 5000:5000
+      build: ./frontend-example-docker
+      container_name: frontend
+    backend:
+      image: ltuomola/backend-example-docker3-1
+      ports:
+        - 8000:8000
+      build: ./backend-example-docker
+      container_name: backend
