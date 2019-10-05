@@ -9,7 +9,8 @@ One example with Docker containers:
 Our exercise frontend project, simple version:
 
 Dockerfile:
-*FROM ubuntu:16.04 
+```
+FROM ubuntu:16.04 
 
 ENV API_URL=http://localhost:8000
 
@@ -24,7 +25,8 @@ RUN npm install
 
 EXPOSE 5000
 
-CMD ["npm", "start"]*
+CMD ["npm", "start"]
+```
 
 The code above will install nodejs into a container/image and it is possible that this app can be run on a computer where nodejs is not installed: Less space is taken but still it is possible to deploy the frontend project on a computer where nodejs is not installed.
 
