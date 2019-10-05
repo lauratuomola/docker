@@ -1,0 +1,2 @@
+d run -v $(pwd)/videos:/app yle-dl https://areena.yle.fi/1-50309813
+
